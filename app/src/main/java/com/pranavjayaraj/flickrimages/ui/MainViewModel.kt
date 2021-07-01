@@ -25,7 +25,7 @@ class MainViewModel @Inject constructor(
         return observePhotos
     }
 
-    fun getCachedPhotoList() {
+    fun getCachedPhotoList(key:String) {
         getCachedPhotoListUseCase.execute()
             .subscribeOn(schedulers.io())
             .observeOn(schedulers.ui())
@@ -33,15 +33,15 @@ class MainViewModel @Inject constructor(
                 if (!it.isNullOrEmpty()) {
                     observePhotos.postValue(it)
                 } else {
-                    getPhotoListFromServer(1, true)
+                    getPhotoListFromServer(1, true,key)
                 }
             }, {
             }).addTo(getCompositeDisposable())
     }
 
-    fun getPhotoListFromServer(page: Int, delete: Boolean = false) {
+    fun getPhotoListFromServer(page: Int, delete: Boolean = false,text:String?) {
         val map = mutableMapOf<String?, Any?>()
-        map["text"] = "car"
+        map["text"] = text
         map["perpage"] = 5
         map["page"] = page
         fetchPhotoListUseCase.execute(map)

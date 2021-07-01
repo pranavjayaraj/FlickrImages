@@ -2,6 +2,7 @@ package com.pranavjayaraj.flickrimages.ui
 
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
+import com.jakewharton.rxbinding2.view.RxView
 import com.pranavjayaraj.domain.models.PhotosResModel
 import com.pranavjayaraj.flickrimages.base.BaseActivity
 import com.pranavjayaraj.flickrimages.base.BaseAdapterItemClick
@@ -9,12 +10,16 @@ import com.pranavjayaraj.flickrimages.databinding.ActivityMainBinding
 import com.pranavjayaraj.flickrimages.ui.adapters.PhotosAdapter
 import com.pranavjayaraj.flickrimages.utils.EndlessScrollListenerRv
 import com.pranavjayaraj.flickrimages.utils.getViewModel
+import kotlinx.android.synthetic.main.activity_main.*
+import java.util.concurrent.TimeUnit
 
 
 class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>(),
     BaseAdapterItemClick<PhotosResModel> {
 
     lateinit var photosAdapter: PhotosAdapter
+
+    var key = ""
 
     private lateinit var endlessScrollListener: EndlessScrollListenerRv
 
@@ -32,7 +37,7 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>(),
     }
 
     private fun getPhotoList() {
-        viewModel.getCachedPhotoList()
+        viewModel.getCachedPhotoList(key)
     }
 
     override fun initializeAdapter() {
@@ -66,11 +71,17 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>(),
         view.swipeRefreshLayout.setOnRefreshListener {
             refresh()
         }
+        RxView.clicks(addKey)
+            .throttleFirst(1, TimeUnit.SECONDS)
+            .subscribe {
+                key = keyword.text.toString()
+                refresh()
+            }.let { }
     }
 
     private fun refresh() {
         view.swipeRefreshLayout.isRefreshing = true
-        viewModel.getPhotoListFromServer(1, true)
+        viewModel.getPhotoListFromServer(1, true,key)
     }
 
     private fun initScrollListeners() {
@@ -78,7 +89,7 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>(),
             override fun onLoadMore() {
                 try {
                     photosAdapter.getPhotosList().lastOrNull()?.page?.let {
-                        viewModel.getPhotoListFromServer(it + 1)
+                        viewModel.getPhotoListFromServer(it + 1,text = key)
                     }
                 } catch (e: Exception) {
 

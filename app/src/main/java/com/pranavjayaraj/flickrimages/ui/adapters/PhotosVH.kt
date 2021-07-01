@@ -15,6 +15,7 @@ class PhotosVH(view: View,val glideDelegate: GlideDelegate) : BaseViewHolder<Pho
             "https://farm${data.farm}.static.flickr.com/${data.server}/${data.id}_${data.secret}_m.jpg",
             -1
         )
+        itemView.titleTv.text = data.title.toString()
         foodDataDetailed = data
     }
 }
