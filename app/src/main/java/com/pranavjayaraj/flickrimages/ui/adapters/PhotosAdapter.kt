@@ -1,10 +1,8 @@
-package com.pranavjayaraj.flickrimages.main.adapters
+package com.pranavjayaraj.flickrimages.ui.adapters
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.pranavjayaraj.domain.models.PhotosResModel
 import com.pranavjayaraj.flickrimages.R

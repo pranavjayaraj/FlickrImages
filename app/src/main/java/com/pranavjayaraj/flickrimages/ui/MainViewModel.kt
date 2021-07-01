@@ -1,6 +1,5 @@
-package com.pranavjayaraj.flickrimages.main
+package com.pranavjayaraj.flickrimages.ui
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.pranavjayaraj.domain.SchedulerProvider
 import com.pranavjayaraj.domain.interactors.DeleteAllPhotosUseCase

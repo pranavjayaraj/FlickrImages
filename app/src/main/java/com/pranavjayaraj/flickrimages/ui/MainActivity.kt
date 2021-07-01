@@ -1,4 +1,4 @@
-package com.pranavjayaraj.flickrimages.main
+package com.pranavjayaraj.flickrimages.ui
 
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
@@ -6,7 +6,7 @@ import com.pranavjayaraj.domain.models.PhotosResModel
 import com.pranavjayaraj.flickrimages.base.BaseActivity
 import com.pranavjayaraj.flickrimages.base.BaseAdapterItemClick
 import com.pranavjayaraj.flickrimages.databinding.ActivityMainBinding
-import com.pranavjayaraj.flickrimages.main.adapters.PhotosAdapter
+import com.pranavjayaraj.flickrimages.ui.adapters.PhotosAdapter
 import com.pranavjayaraj.flickrimages.utils.EndlessScrollListenerRv
 import com.pranavjayaraj.flickrimages.utils.getViewModel
 

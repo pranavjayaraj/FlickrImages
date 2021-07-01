@@ -1,4 +1,4 @@
-package com.pranavjayaraj.flickrimages.main.adapters
+package com.pranavjayaraj.flickrimages.ui.adapters
 
 import android.view.View
 import com.pranavjayaraj.domain.models.PhotosResModel

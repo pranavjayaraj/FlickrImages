@@ -2,7 +2,7 @@ package com.pranavjayaraj.flickrimages.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.pranavjayaraj.flickrimages.main.MainViewModel
+import com.pranavjayaraj.flickrimages.ui.MainViewModel
 import com.pranavjayaraj.flickrimages.common.ViewModelFactory
 import com.pranavjayaraj.flickrimages.common.ViewModelKey
 import dagger.Binds
