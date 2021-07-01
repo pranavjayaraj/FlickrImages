@@ -1,0 +1,5 @@
+rootProject.name = "FlickrImages"
+include ':app'
+include ':data'
+include ':device'
+include ':domain'
