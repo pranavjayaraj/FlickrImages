@@ -1,6 +1,6 @@
 # FlickrImages
 
-An Android app developed implemented using the following technologies
+An Android app developed by using the following technologies
 
 1. Clean Architecture
 
