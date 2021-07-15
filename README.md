@@ -1,6 +1,6 @@
-# FlickrImages
+# Flickr Images
 
-An Android app developed by using the following technologies
+An Android app which displays images from Flickr, developed by using the following technologies
 
 1. Clean Architecture
 
