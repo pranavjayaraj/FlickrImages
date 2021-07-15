@@ -4,11 +4,11 @@ An Android app which displays images from Flickr, developed by using the followi
 
 1. Clean Architecture for achieving modularisation,decoupling,scalability and much more
 
-2. Dagger for acheiving dependency injection
+2. Dagger2 for acheiving dependency injection
 
 3. MVVM design pattern 
 
-4. 100% Kotlin
+4. 100% Kotlin 
 
 5. Reactive extensions for asynchronous programming 
 
