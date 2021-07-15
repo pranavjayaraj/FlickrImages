@@ -10,7 +10,7 @@ An Android app which displays images from Flickr, developed by using the followi
 
 4. 100% Kotlin
 
-5. RxKotlin
+5. Reactive extensions
 
 6. Retrofit
 
